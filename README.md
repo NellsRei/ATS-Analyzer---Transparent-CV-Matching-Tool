@@ -1,72 +1,83 @@
-# ATS-Analyzer---Transparent-CV-Matching-Tool
-This web-based tool allows users to paste a job description and their CV to receive an ATS-style match score, keyword coverage analysis, and actionable recommendations—without storing personal data.
-# Getting Starth Create React App
+# ATS Resume Analyzer  
+**A transparent, free ATS readiness checker for job seekers**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 📌 Overview
 
-In the project directory, you can run:
+Many qualified job seekers are rejected by Applicant Tracking Systems (ATS) not because they lack skills, but because their CVs do not align with keyword-based screening criteria. Most existing ATS optimization tools are paid, opaque, or provide shallow feedback that encourages keyword stuffing.
 
-### `npm start`
+**ATS Resume Analyzer** is a free, transparent web-based tool that helps job seekers understand how their CV matches a specific job description and provides clear, ethical recommendations on how to improve ATS visibility—without compromising human readability.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎯 Problem Statement
 
-### `npm test`
+Applicant Tracking Systems are widely used to filter CVs before they reach a human recruiter. These systems often rely on keyword matching, section parsing, and weighted scoring. As a result:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Qualified candidates are filtered out early  
+- Job seekers do not understand *why* they were rejected  
+- Existing tools are expensive or lack transparency  
 
-### `npm run build`
+This disproportionately affects students, early-career professionals, and career switchers.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💡 Solution
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project provides a simple workflow:
 
-### `npm run eject`
+1. Paste a **job description**
+2. Paste a **CV (resume)**
+3. Receive:
+   - An ATS-style match score
+   - Keyword coverage analysis
+   - Missing or underrepresented skills
+   - Section-based improvement suggestions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The system simulates **common ATS behavior** and explains its results clearly, helping users make informed improvements.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ✨ Key Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ATS-style match score (0–100%)
+- Required vs preferred keyword breakdown
+- Missing and weak skill detection
+- Section-based recommendations (Skills, Experience, Summary)
+- Transparent scoring logic
+- Privacy-first design (no CV data stored)
+- Free and accessible
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧠 How It Works (High-Level)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Keywords and role-specific phrases are extracted from the job description  
+- The CV is analyzed using the same extraction and normalization process  
+- Keywords are matched using exact, synonym, and partial matching  
+- A weighted scoring model simulates common ATS filtering behavior  
+- Actionable recommendations are generated for missing or weak areas  
 
-### Code Splitting
+> ⚠️ This tool does **not** represent or replicate any specific employer ATS system. It provides a realistic simulation based on widely documented ATS patterns.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🛠️ Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Frontend**
+- React
 
-### Making a Progressive Web App
+**Backend**
+- FastAPI *(or Node.js – configurable)*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**NLP & Text Analysis**
+- TF-IDF
+- Cosine similarity
+- Keyword normalization and synonym handling
 
-### Advanced Configuration
+**Architecture**
+- RESTful API
+- Modular matching logic
+- Stateless request processing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
